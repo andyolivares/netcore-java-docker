@@ -1,8 +1,9 @@
-FROM mcr.microsoft.com/dotnet/sdk:5.0
+FROM mcr.microsoft.com/dotnet/sdk:6.0-jammy
 LABEL maintainer="Andres Olivares <andyolivares@gmail.com>"
 
 # Update OS packages
 RUN apt-get update && apt-get upgrade -y --no-install-recommends
+RUN apt-get install -y zip unzip
 RUN mkdir -p /usr/share/man/man1 /usr/share/man/man2
 
 # Install OpenJDK 11
