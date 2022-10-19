@@ -1,9 +1,9 @@
 FROM mcr.microsoft.com/dotnet/sdk:6.0-jammy
 LABEL maintainer="Andres Olivares <andyolivares@gmail.com>"
 
-# Update OS packages
+# Update OS packages & install some utilities
 RUN apt-get update && apt-get upgrade -y --no-install-recommends
-RUN apt-get install -y zip unzip
+RUN apt-get install -y zip unzip xmlstarlet osslsigncode
 RUN mkdir -p /usr/share/man/man1 /usr/share/man/man2
 
 # Install OpenJDK 11
